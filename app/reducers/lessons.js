@@ -1,4 +1,4 @@
-import createReducer from '../services';
+import { createReducer } from '../services';
 import {
     FETCHING_LESSONS,
     FETCHED_LESSONS_SUCCESS,
