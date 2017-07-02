@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import {
   TouchableHighlight,
@@ -10,13 +11,14 @@ import {
 import {
   List,
   ListItem,
+  FlatList,
 } from "react-native-elements";
 
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
-import reducer  from '../reducers';
+import reducer from '../reducers';
 
 
 class Home extends Component {
@@ -47,21 +49,22 @@ class Home extends Component {
           this.props.isFetching && <Text>Loading</Text>
         }
         {
-          <List>
-            <FlatList
-              data={this.props.lesssons}
-              ItemSeparatorComponent={this.renderSeparator}
-              ListHeaderComponent={() => <Text>Select Lesson</Text>}
-              renderItem={({ item }) => (
-                <ListItem
-                  roundAvatar
-                  title={item.name}
-                  subtitle={item.label}
-                  avatar={{ uri: item.uri }}
-                />
-              )}
-            />
-          </List>
+          (this.props.lesssons && this.props.lesssons.length) ?
+            (<List>
+              <FlatList
+                data={this.props.lesssons}
+                ItemSeparatorComponent={this.renderSeparator}
+                ListHeaderComponent={() => <Text>Select Lesson</Text>}
+                renderItem={({ item }) => (
+                  <ListItem
+                    roundAvatar
+                    title={item.name}
+                    subtitle={item.label}
+                    avatar={{ uri: item.uri }}
+                  />
+                )}
+              />
+            </List>) : null
         }
       </view>
     );
