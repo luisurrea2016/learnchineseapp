@@ -15,9 +15,8 @@ class AppContainer extends Component {
     }
 }
 
-//centrally dispatching action across entire application...
 function mapDispatchToProps(dispatch) {
     return bindActionCreators(ActionCreators, dispatch);
 }
 
-export default connect(state => ({}), mapDispatchToProps)(AppContainer);
+export default connect(state =>({}), mapDispatchToProps)(AppContainer);

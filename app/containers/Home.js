@@ -73,15 +73,15 @@ class Home extends Component {
       <View style={styles.container}>
         <View>
           <TouchableHighlight onPress={() => this.props.fetchLessons()}>
-            <Text>Fetch Lessons 45</Text>
+            <Text>Fetch Lessons</Text>
           </TouchableHighlight>
         </View>
         {
-          <Text>{this.props.isFetching}!!!</Text>
+          this.props.isFetching && <Text>Loading</Text>
         }
         {
-          (this.props.lesssons && this.props.lesssons.length) ?
-            (<Text>Lessons are here!!!</Text>) : null
+          (this.props.lessons && this.props.lessons.length) ?
+            (<Text>{this.props.lessons[0].name}</Text>) : null
         }
         <Text>Let's learn some chinese 555 boom!!!</Text>
       </View>
@@ -90,30 +90,14 @@ class Home extends Component {
 }
 
 function mapStateToProps(state) {
-  const { lessons, isFetchig, error } = state.lessonsState;
+
+  const { lessons, isFetching, error } = state.lessonsState;
   return {
     lessons,
-    isFetchig,
+    isFetching,
     error,
   };
 }
-
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     fetchLessons: () => dispatch(ActionCreators.fetchLessons())
-//   };
-// }
-
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators(ActionCreators, dispatch);
-// }
-
-
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(Home);
-
 
 const styles = StyleSheet.create({
   container: {
