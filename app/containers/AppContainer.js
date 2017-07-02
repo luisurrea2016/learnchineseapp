@@ -2,13 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ActionCreators } from '../actions';
-import Home from './Home';
 
-import {
-    StyleSheet,
-    Text,
-    View
-} from 'react-native';
+import Home from './Home';
 
 class AppContainer extends Component {
     constructor(props) {
@@ -16,22 +11,9 @@ class AppContainer extends Component {
     }
 
     render() {
-        // return <Home {...this.props} />
-        return (<View style={styles.container}>
-            <Text>Let's learn some chinese 555 boom !!!</Text>
-        </View>);
+        return <Home {...this.props} />;
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
-
 
 //centrally dispatching action across entire application...
 function mapDispatchToProps(dispatch) {

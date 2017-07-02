@@ -18,7 +18,6 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
-import reducer from '../reducers';
 
 
 class Home extends Component {
@@ -37,44 +36,65 @@ class Home extends Component {
       }}
     />;
 
+  // render() {
+  //   return (
+  //     <view>
+  //       <View>
+  //         <TouchableHighlight onPress={() => this.props.fetchLessons()}>
+  //           <Text>Fetch Lessons</Text>
+  //         </TouchableHighlight>
+  //       </View>
+  //       {
+  //         this.props.isFetching && <Text>Loading</Text>
+  //       }
+  //       {
+  //         (this.props.lesssons && this.props.lesssons.length) ?
+  //           (<List>
+  //             <FlatList
+  //               data={this.props.lesssons}
+  //               ItemSeparatorComponent={this.renderSeparator}
+  //               ListHeaderComponent={() => <Text>Select Lesson</Text>}
+  //               renderItem={({ item }) => (
+  //                 <ListItem
+  //                   roundAvatar
+  //                   title={item.name}
+  //                   subtitle={item.label}
+  //                   avatar={{ uri: item.uri }}
+  //                 />
+  //               )}
+  //             />
+  //           </List>) : null
+  //       }
+  //     </view>
+  //   );
+  // }
   render() {
     return (
-      <view>
+      <View style={styles.container}>
         <View>
           <TouchableHighlight onPress={() => this.props.fetchLessons()}>
-            <Text>Fetch Lessons</Text>
+            <Text>Fetch Lessons 45</Text>
           </TouchableHighlight>
         </View>
         {
-          this.props.isFetching && <Text>Loading</Text>
+          <Text>{this.props.isFetching}!!!</Text>
         }
         {
           (this.props.lesssons && this.props.lesssons.length) ?
-            (<List>
-              <FlatList
-                data={this.props.lesssons}
-                ItemSeparatorComponent={this.renderSeparator}
-                ListHeaderComponent={() => <Text>Select Lesson</Text>}
-                renderItem={({ item }) => (
-                  <ListItem
-                    roundAvatar
-                    title={item.name}
-                    subtitle={item.label}
-                    avatar={{ uri: item.uri }}
-                  />
-                )}
-              />
-            </List>) : null
+            (<Text>Lessons are here!!!</Text>) : null
         }
-      </view>
+        <Text>Let's learn some chinese 555 boom!!!</Text>
+      </View>
     );
   }
 }
 
 function mapStateToProps(state) {
+  const { lessons, isFetchig, error } = state.lessonsState;
   return {
-    lessons: state.lesssons,
-    isFetching: state.isFetching,
+    lessons,
+    isFetchig,
+    error,
   };
 }
 
@@ -93,6 +113,17 @@ function mapStateToProps(state) {
 //   mapStateToProps,
 //   mapDispatchToProps
 // )(Home);
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+
 
 export default connect(
   mapStateToProps

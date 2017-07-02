@@ -1,4 +1,4 @@
-import Api from '../services';
+import { Api } from '../services';
 import {
     FETCHING_LESSONS,
     FETCHED_LESSONS_SUCCESS,

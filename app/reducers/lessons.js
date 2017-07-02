@@ -11,7 +11,7 @@ const initialState = {
     error: '',
 }
 
-export const fetchedLessons = createReducer(initialState, {
+export const lessonsState = createReducer(initialState, {
     [FETCHING_LESSONS](state, action) {
         return {
             ...state,
