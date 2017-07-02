@@ -5,13 +5,13 @@ import {
   TouchableHighlight,
   View,
   Text,
-  StyleSheet
+  StyleSheet,
+  FlatList,
 } from 'react-native';
 
 import {
   List,
   ListItem,
-  FlatList,
 } from "react-native-elements";
 
 import { Provider } from 'react-redux';
@@ -36,38 +36,6 @@ class Home extends Component {
       }}
     />;
 
-  // render() {
-  //   return (
-  //     <view>
-  //       <View>
-  //         <TouchableHighlight onPress={() => this.props.fetchLessons()}>
-  //           <Text>Fetch Lessons</Text>
-  //         </TouchableHighlight>
-  //       </View>
-  //       {
-  //         this.props.isFetching && <Text>Loading</Text>
-  //       }
-  //       {
-  //         (this.props.lesssons && this.props.lesssons.length) ?
-  //           (<List>
-  //             <FlatList
-  //               data={this.props.lesssons}
-  //               ItemSeparatorComponent={this.renderSeparator}
-  //               ListHeaderComponent={() => <Text>Select Lesson</Text>}
-  //               renderItem={({ item }) => (
-  //                 <ListItem
-  //                   roundAvatar
-  //                   title={item.name}
-  //                   subtitle={item.label}
-  //                   avatar={{ uri: item.uri }}
-  //                 />
-  //               )}
-  //             />
-  //           </List>) : null
-  //       }
-  //     </view>
-  //   );
-  // }
   render() {
     return (
       <View style={styles.container}>
@@ -80,8 +48,23 @@ class Home extends Component {
           this.props.isFetching && <Text>Loading</Text>
         }
         {
-          (this.props.lessons && this.props.lessons.length) ?
-            (<Text>{this.props.lessons[0].name}</Text>) : null
+          this.props.lessons.length ?
+            (<List>
+              <FlatList
+                keyExtractor={item => item.name}
+                data={this.props.lessons}
+                ItemSeparatorComponent={this.renderSeparator}
+                ListHeaderComponent={() => <Text>Select Lesson</Text>}
+                renderItem={({ item }) => (
+                  <ListItem
+                    roundAvatar
+                    title={item.name}
+                    subtitle={item.label}
+                    avatar={{ uri: item.uri }}
+                  />
+                )}
+              />
+            </List>) : null
         }
         <Text>Let's learn some chinese 555 boom!!!</Text>
       </View>
