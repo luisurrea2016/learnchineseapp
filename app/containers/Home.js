@@ -16,9 +16,8 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
-import reducer from './app/reducers';
+import reducer  from '../reducers';
 
-//import { ActionCreators } from '../actions';
 
 class Home extends Component {
 
