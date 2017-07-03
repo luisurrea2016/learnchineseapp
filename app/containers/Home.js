@@ -36,6 +36,11 @@ class Home extends Component {
       }}
     />;
 
+
+/**https://github.com/react-community/react-navigation/tree/master/examples
+ * https://github.com/leecade/react-native-swiper/blob/master/examples/components/Dynamic/index.js
+ */
+
   render() {
     return (
       <View style={styles.container}>
