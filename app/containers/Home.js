@@ -39,9 +39,12 @@ class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Text>Let's learn some chinese 555 boom!!!</Text>
         <View>
           <TouchableHighlight onPress={() => this.props.fetchLessons()}>
-            <Text>Fetch Lessons</Text>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Fetch Lessons</Text>
+            </View>
           </TouchableHighlight>
         </View>
         {
@@ -66,7 +69,6 @@ class Home extends Component {
               />
             </List>) : null
         }
-        <Text>Let's learn some chinese 555 boom!!!</Text>
       </View>
     );
   }
@@ -86,9 +88,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  button: {
+    marginBottom: 30,
+    width: 260,
+    alignItems: 'center',
+    backgroundColor: '#2196F3'
+  },
+  buttonText: {
+    padding: 20,
+    color: 'white'
+  }
 });
 
 

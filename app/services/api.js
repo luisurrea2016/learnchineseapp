@@ -29,6 +29,56 @@ export class Api {
         label: 'mu',
         uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
       },
+      {
+        name: 'mo',
+        label: 'mo',
+        uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
+      },
+      {
+        name: 'moo',
+        label: 'moo',
+        uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
+      },
+      // {
+      //   name: 'muo',
+      //   label: 'muo',
+      //   uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
+      // },
+      // {
+      //   name: 'muu',
+      //   label: 'muu',
+      //   uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
+      // },
+      // {
+      //   name: 'mui',
+      //   label: 'mui',
+      //   uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
+      // },
+      // {
+      //   name: 'mue',
+      //   label: 'mue',
+      //   uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
+      // },
+      // {
+      //   name: 'mua',
+      //   label: 'mua',
+      //   uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
+      // },
+      // {
+      //   name: 'mub',
+      //   label: 'mub',
+      //   uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
+      // },
+      // {
+      //   name: 'mut',
+      //   label: 'mut',
+      //   uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
+      // },
+      // {
+      //   name: 'muy',
+      //   label: 'muy',
+      //   uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg',
+      // },
     ]);
   }
 
