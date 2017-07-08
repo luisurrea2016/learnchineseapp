@@ -3,7 +3,7 @@ import {
     FETCHING_LESSONS,
     FETCHED_LESSONS_SUCCESS,
     FETCHED_LESSONS_FAILURE
-} from '../actions'
+} from '../actions';
 
 const initialState = {
     lessons: [],

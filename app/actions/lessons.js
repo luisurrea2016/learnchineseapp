@@ -18,19 +18,19 @@ export function fetchLessons() {
 export function fetchingLessons() {
     return {
         type: FETCHING_LESSONS,
-    }
+    };
 }
 
 export function fetchedLessonsSuccess(lessons) {
     return {
         type: FETCHED_LESSONS_SUCCESS,
         lessons,
-    }
+    };
 }
 
 export function fetchedLessonsFailure(error) {
     return {
         type: FETCHED_LESSONS_FAILURE,
         error,
-    }
+    };
 }
