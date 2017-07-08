@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addNavigationHelpers, StackNavigator } from 'react-navigation';
 
@@ -9,14 +8,19 @@ export const AppNavigator = StackNavigator({
     Home: { screen: Home },
 });
 
-const AppWithNavigationState = ({ dispatch, nav }) => (
-    <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav })} />
-);
+class AppWithNavigationState extends Component {
+    
+    constructor(props) {
+        super(props);
+    }
 
-AppWithNavigationState.propTypes = {
-    dispatch: PropTypes.func.isRequired,
-    nav: PropTypes.object.isRequired,
-};
+    render() {
+        return (<AppNavigator navigation={addNavigationHelpers({ dispatch: this.props.dispatch, 
+        state: this.props.nav,
+         })} />
+         );
+    }
+}
 
 const mapStateToProps = state => ({
     nav: state.nav,

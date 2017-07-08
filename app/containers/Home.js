@@ -44,7 +44,7 @@ class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Let's learn some chinese 555 boom!!!</Text>
+        <Text>Let's learn some chinese 123!!!</Text>
         <View>
           <TouchableHighlight onPress={() => this.props.fetchLessons()}>
             <View style={styles.button}>

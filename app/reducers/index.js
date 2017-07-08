@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import * as lessonsReducer from './lessons';
-import * as navigationREducer from './navigation';
+//import * as navigationReducer from './navigation';
 
 export default combineReducers({
     ...lessonsReducer,
-    navigationREducer,
+    //navigationReducer,
 });

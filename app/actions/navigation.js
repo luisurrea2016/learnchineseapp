@@ -4,7 +4,7 @@ import {
 } from './types';
 
 
-function goToLesson(lesson) {
+export function goToLesson(lesson) {
     return {
         type: GO_TO_LESSON,
         lesson
