@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addNavigationHelpers, StackNavigator } from 'react-navigation';
 
 import Home from './Home';
+import Lesson from './Lesson';
 
 import {
     View,
@@ -19,7 +20,7 @@ const Banner = () => (
 
 export const AppNavigator = StackNavigator({
     Home: { screen: Home },
-    Lesson: { screen: Banner },
+    Lesson: { screen: Lesson },
 });
 
 class AppWithNavigationState extends Component {

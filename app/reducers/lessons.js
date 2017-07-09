@@ -2,13 +2,15 @@ import { createReducer } from '../services';
 import {
     FETCHING_LESSONS,
     FETCHED_LESSONS_SUCCESS,
-    FETCHED_LESSONS_FAILURE
+    FETCHED_LESSONS_FAILURE,
+    SET_CURRENT_LESSON,
 } from '../actions';
 
 const initialState = {
     lessons: [],
     isFetching: false,
     error: '',
+    currentLesson: undefined,
 }
 
 export const lessonsState = createReducer(initialState, {
@@ -34,6 +36,13 @@ export const lessonsState = createReducer(initialState, {
             ...state,
             isFetching: false,
             error: action.error,
+        };
+    },
+
+    [SET_CURRENT_LESSON](state, action) {
+        return {
+            ...state,
+            currentLesson: action.lesson,
         };
     },
 

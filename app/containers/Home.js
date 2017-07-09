@@ -44,7 +44,7 @@ class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Let's learn some chinese boom!!!</Text>
+        <Text>Let's learn some chinese!!!</Text>
         <View>
           <TouchableHighlight onPress={() => this.props.fetchLessons()}>
             <View style={styles.button}>
@@ -64,7 +64,10 @@ class Home extends Component {
                 ItemSeparatorComponent={this.renderSeparator}
                 ListHeaderComponent={() => <Text>Select Lesson</Text>}
                 renderItem={({ item }) => (
-                  <TouchableOpacity onPress={() => this.props.goToLesson()}>
+                  <TouchableOpacity onPress={() => {
+                    this.props.setCurrentLesson(item);
+                    this.props.goToLesson();
+                    }}>
                     <ListItem
                       roundAvatar
                       title={item.name}

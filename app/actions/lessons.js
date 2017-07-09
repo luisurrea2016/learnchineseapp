@@ -2,7 +2,8 @@ import { Api } from '../services';
 import {
     FETCHING_LESSONS,
     FETCHED_LESSONS_SUCCESS,
-    FETCHED_LESSONS_FAILURE
+    FETCHED_LESSONS_FAILURE,
+    SET_CURRENT_LESSON,    
 } from './types';
 
 export function fetchLessons() {
@@ -32,5 +33,12 @@ export function fetchedLessonsFailure(error) {
     return {
         type: FETCHED_LESSONS_FAILURE,
         error,
+    };
+}
+
+export function setCurrentLesson(lesson) {
+    return {
+        type: SET_CURRENT_LESSON,
+        lesson,
     };
 }
