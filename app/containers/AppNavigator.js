@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addNavigationHelpers, StackNavigator } from 'react-navigation';
 
-import { bindActionCreators } from 'redux';
-import { ActionCreators } from '../actions';
-
 import Home from './Home';
 
 // import {
@@ -33,7 +30,7 @@ class AppWithNavigationState extends Component {
     render() {
         return (
             <AppNavigator navigation={addNavigationHelpers({
-                dispatch: this.props.dispatch,
+                dispatch: this.props,
                 state: this.props.nav,
             })} />
         );
@@ -44,13 +41,8 @@ const mapStateToProps = state => ({
     nav: state.nav,
 });
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators(ActionCreators, dispatch);
-}
-
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+    mapStateToProps
 )(AppWithNavigationState);
 
 // const styles = StyleSheet.create({

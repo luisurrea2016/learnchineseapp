@@ -15,9 +15,8 @@ import {
 } from "react-native-elements";
 
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
-import thunkMiddleware from 'redux-thunk';
-import createLogger from 'redux-logger';
+import { bindActionCreators } from 'redux';
+import { ActionCreators } from '../actions';
 
 
 class Home extends Component {
@@ -89,6 +88,10 @@ function mapStateToProps(state) {
   };
 }
 
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(ActionCreators, dispatch);
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -111,5 +114,6 @@ const styles = StyleSheet.create({
 
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Home);
