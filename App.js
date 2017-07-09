@@ -10,6 +10,7 @@ import { createLogger } from 'redux-logger';
 import reducer from './app/reducers';
 
 import AppContainer from './app/containers/AppContainer';
+import AppWithNavigationState from './app/containers/AppNavigator';
 
 const loggerMiddleware = createLogger({ predicate: (getState, action) => __DEV__ });
 
@@ -31,3 +32,9 @@ export default App = () => (
     <AppContainer />
   </Provider>
 );
+
+// export default App = () => (
+//   <Provider store={store}>
+//     <AppWithNavigationState />
+//   </Provider>
+// );
