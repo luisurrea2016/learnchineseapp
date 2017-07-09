@@ -5,10 +5,22 @@ import { ActionCreators } from '../actions';
 
 import Home from './Home';
 
+import {
+  View,
+  Text,
+  StyleSheet,
+  Platform,
+} from 'react-native';
+
+const Banner = () => (
+  <View style={styles.banner}>    
+    <Text style={styles.title}>React Navigation</Text>
+  </View>
+);
 
 import { addNavigationHelpers, StackNavigator } from 'react-navigation';
 
-const AppNavigator = StackNavigator({
+export const AppNavigator = StackNavigator({
     Home: { screen: Banner },
 });
 
@@ -32,7 +44,7 @@ class App extends Component {
 }
 
 
-class AppContainer extends Component {
+class AppContainer2 extends Component {
     constructor(props) {
         super(props);
     }
@@ -48,4 +60,23 @@ function mapDispatchToProps(dispatch) {
 
 //export default connect(state =>({}), mapDispatchToProps)(AppContainer);
 
-export default connect(mapStateToProps)(App);
+//export default connect(mapStateToProps)(App);
+
+export const AppContainer = connect(mapStateToProps)(App);
+
+
+const styles = StyleSheet.create({
+  banner: {
+    backgroundColor: '#673ab7',
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 16,
+    marginTop: Platform.OS === 'ios' ? 20 : 0,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: '200',
+    color: '#fff',
+    margin: 8,
+  },
+});
