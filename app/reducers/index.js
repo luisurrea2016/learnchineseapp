@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import * as lessonsReducer from './lessons';
-import * as navigationReducer from './navigation';
+import { lessonsState } from './lessons';
+import { navigationState } from './navigation';
 
 const reducers = combineReducers({
-    ...lessonsReducer,
-    //navigationReducer,
+    lessonsState,
+    nav: navigationState,
 });
 
 export default reducers;

@@ -7,6 +7,19 @@ import { ActionCreators } from '../actions';
 
 import Home from './Home';
 
+// import {
+//     View,
+//     Text,
+//     StyleSheet,
+//     Platform,
+// } from 'react-native';
+
+// const Banner = () => (
+//     <View style={styles.banner}>
+//         <Text style={styles.title}>React Navigation</Text>
+//     </View>
+// );
+
 export const AppNavigator = StackNavigator({
     Home: { screen: Home },
 });
@@ -28,7 +41,7 @@ class AppWithNavigationState extends Component {
 }
 
 const mapStateToProps = state => ({
-    nav: state.navigationState,
+    nav: state.nav,
 });
 
 function mapDispatchToProps(dispatch) {
@@ -39,3 +52,19 @@ export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(AppWithNavigationState);
+
+// const styles = StyleSheet.create({
+//     banner: {
+//         backgroundColor: '#673ab7',
+//         flexDirection: 'row',
+//         alignItems: 'center',
+//         padding: 16,
+//         marginTop: Platform.OS === 'ios' ? 20 : 0,
+//     },
+//     title: {
+//         fontSize: 18,
+//         fontWeight: '200',
+//         color: '#fff',
+//         margin: 8,
+//     },
+// });
