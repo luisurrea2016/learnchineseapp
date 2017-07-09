@@ -4,21 +4,22 @@ import { addNavigationHelpers, StackNavigator } from 'react-navigation';
 
 import Home from './Home';
 
-// import {
-//     View,
-//     Text,
-//     StyleSheet,
-//     Platform,
-// } from 'react-native';
+import {
+    View,
+    Text,
+    StyleSheet,
+    Platform,
+} from 'react-native';
 
-// const Banner = () => (
-//     <View style={styles.banner}>
-//         <Text style={styles.title}>React Navigation</Text>
-//     </View>
-// );
+const Banner = () => (
+    <View style={styles.banner}>
+        <Text style={styles.title}>React Navigation</Text>
+    </View>
+);
 
 export const AppNavigator = StackNavigator({
     Home: { screen: Home },
+    Lesson: { screen: Banner },
 });
 
 class AppWithNavigationState extends Component {
@@ -45,18 +46,18 @@ export default connect(
     mapStateToProps
 )(AppWithNavigationState);
 
-// const styles = StyleSheet.create({
-//     banner: {
-//         backgroundColor: '#673ab7',
-//         flexDirection: 'row',
-//         alignItems: 'center',
-//         padding: 16,
-//         marginTop: Platform.OS === 'ios' ? 20 : 0,
-//     },
-//     title: {
-//         fontSize: 18,
-//         fontWeight: '200',
-//         color: '#fff',
-//         margin: 8,
-//     },
-// });
+const styles = StyleSheet.create({
+    banner: {
+        backgroundColor: '#673ab7',
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 16,
+        marginTop: Platform.OS === 'ios' ? 20 : 0,
+    },
+    title: {
+        fontSize: 18,
+        fontWeight: '200',
+        color: '#fff',
+        margin: 8,
+    },
+});

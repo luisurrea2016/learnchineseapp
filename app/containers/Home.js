@@ -7,6 +7,7 @@ import {
   Text,
   StyleSheet,
   FlatList,
+  TouchableOpacity,
 } from 'react-native';
 
 import {
@@ -36,14 +37,14 @@ class Home extends Component {
     />;
 
 
-/**https://github.com/react-community/react-navigation/tree/master/examples
- * https://github.com/leecade/react-native-swiper/blob/master/examples/components/Dynamic/index.js
- */
+  /**https://github.com/react-community/react-navigation/tree/master/examples
+   * https://github.com/leecade/react-native-swiper/blob/master/examples/components/Dynamic/index.js
+   */
 
   render() {
     return (
       <View style={styles.container}>
-        <Text>Let's learn some chinese 123!!!</Text>
+        <Text>Let's learn some chinese boom!!!</Text>
         <View>
           <TouchableHighlight onPress={() => this.props.fetchLessons()}>
             <View style={styles.button}>
@@ -63,12 +64,14 @@ class Home extends Component {
                 ItemSeparatorComponent={this.renderSeparator}
                 ListHeaderComponent={() => <Text>Select Lesson</Text>}
                 renderItem={({ item }) => (
-                  <ListItem
-                    roundAvatar
-                    title={item.name}
-                    subtitle={item.label}
-                    avatar={{ uri: item.uri }}
-                  />
+                  <TouchableOpacity onPress={() => this.props.goToLesson()}>
+                    <ListItem
+                      roundAvatar
+                      title={item.name}
+                      subtitle={item.label}
+                      avatar={{ uri: item.uri }}
+                    />
+                  </TouchableOpacity>
                 )}
               />
             </List>) : null
@@ -89,7 +92,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators(ActionCreators, dispatch);
+  return bindActionCreators(ActionCreators, dispatch);
 }
 
 const styles = StyleSheet.create({

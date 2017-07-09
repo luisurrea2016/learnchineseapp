@@ -11,25 +11,18 @@ import {
 const initialState = AppNavigator.router.getStateForAction(
     AppNavigator.router.getActionForPathAndParams('Home'));
 
-// export const navigationState = createReducer(initialState, {
-//     [GO_TO_LESSON](state, action) {
-//         return AppNavigator.router.getStateForAction(
-//             NavigationActions.navigate({ routeName: 'Lesson' }),
-//             state
-//         );
-//     },
+export const navigationState = createReducer(initialState, {
+    [GO_TO_LESSON](state, action) {
+        return AppNavigator.router.getStateForAction(
+            NavigationActions.navigate({ routeName: 'Lesson' }),
+            state
+        );
+    },
 
-//     [GO_HOME](state, action) {
-//         return AppNavigator.router.getStateForAction(
-//             NavigationActions.navigate({ routeName: 'Home' }),
-//             state
-//         );
-//     },
-// });
-
-export const navigationState = (state = initialState, action) => {
-
-    const nextSate = AppNavigator.router.getStateForAction(action, state);
-
-    return nextSate || state;
-};
+    [GO_HOME](state, action) {
+        return AppNavigator.router.getStateForAction(
+            NavigationActions.navigate({ routeName: 'Home' }),
+            state
+        );
+    },
+});
