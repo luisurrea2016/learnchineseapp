@@ -3,7 +3,7 @@ import {
     FETCHING_LESSONS,
     FETCHED_LESSONS_SUCCESS,
     FETCHED_LESSONS_FAILURE,
-    SET_CURRENT_LESSON,    
+    SET_CURRENT_LESSON,
 } from './types';
 
 export function fetchLessons() {
@@ -40,5 +40,13 @@ export function setCurrentLesson(lesson) {
     return {
         type: SET_CURRENT_LESSON,
         lesson,
+    };
+}
+
+export function goToCurrentLesson({ lesson, goTo }) {
+
+    return (dispatch, getSate) => {
+        dispatch(setCurrentLesson(lesson));
+        goTo();
     };
 }

@@ -4,10 +4,9 @@ import {
 } from './types';
 
 
-export function goToLesson(lesson) {
+export function goToLesson() {
     return {
         type: GO_TO_LESSON,
-        lesson
     };
 }
 
